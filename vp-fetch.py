@@ -1,9 +1,10 @@
 #import required library
-import bullet
+from bullet import Bullet
 import pandas as pd
 import requests
 import io
 import base64
+
 # request header
 headers = {
     "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html"
@@ -41,12 +42,25 @@ if __name__ == "__main__":
 
 
     # Available coutries
-    print(set(data["CountryLong"]))
+    country_list = list(set(data["CountryLong"]))
 
-    # select the name of counrty
-    select = input("\nEnter the desired country name from list above :")
+    select_country = Bullet(
+        prompt = "\nPlease choose a country: ",
+        choices = country_list, 
+        indent = 0,
+        align = 5, 
+        margin = 2,
+        shift = 0,
+        bullet = "",
+        pad_right = 5,
+        return_index = True
+    )
 
-    selected = data[data["CountryLong"] == select]
+    result = select_country.launch()
+    print("You chose country:", result[0])
+
+
+    selected = data[data["CountryLong"] == result[0]]
 
     if not selected.empty:
         # sort according to the Score
@@ -61,6 +75,6 @@ if __name__ == "__main__":
         base_code = decode_data(base_code)
 
         # write the *.ovpn file in current dir
-        write_to_file(select, base_code)
+        write_to_file(result[0], base_code)
     else:
         print("Incorrect country name !!")
