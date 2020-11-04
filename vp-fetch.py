@@ -29,11 +29,16 @@ def write_to_file(name, coded_string):
 if __name__ == "__main__":
 
     # fetching data
+    try:
+        csv_content = requests.get(
+            "http://www.vpngate.net/api/iphone/", headers=headers, timeout=10
+        ).content
+    except requests.exceptions.ConnectionError:
+        print("Unable to fetch data !!")
+        print("Try again !!")
+        exit(0)
 
-    csv_content = requests.get(
-        "http://www.vpngate.net/api/iphone/", headers=headers, timeout=10
-    ).content
-
+        
     # reading the csv data
     data = pd.read_csv(io.BytesIO(csv_content), skiprows=1)
 
