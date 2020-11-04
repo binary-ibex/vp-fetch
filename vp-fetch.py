@@ -3,6 +3,10 @@ import bullet
 import pandas as pd
 import requests
 
+# request header
+headers = {
+    "User-Agent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html"
+}
 
 if __name__ == "__main__":
 
