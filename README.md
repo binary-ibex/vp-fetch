@@ -1,11 +1,17 @@
 # VP-FETCH
 
-Simple python script to fetch the config file of the free vpn servers provided by VPNgate.
+Simple python script to generate .ovpn config file. It fetch free vpn server information from https://www.vpngate.net/en/ .
+
+## installation
+```
+pip3 install -r requirements.txt
+
+```
 
 ## Use
 ```python
 
-python3 vp-fetch
+python3 vp-fetch.py
 
 ```
 
@@ -35,10 +41,11 @@ sudo openvpn Canada.ovpn
 
 
 ## Requirements
-- #### required python libraries
+- **required python libraries**
 
   - bullet
   - pandas
   - bs4
   - requests
-- openvpn client
+
+- **openvpn client**
