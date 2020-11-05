@@ -2,7 +2,7 @@
 
 Simple python script to generate .ovpn config file. It fetch free vpn server information from https://www.vpngate.net/en/ .
 
-## installation
+## Installation
 ```
 pip3 install -r requirements.txt
 
