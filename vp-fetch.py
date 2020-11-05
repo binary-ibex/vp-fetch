@@ -38,7 +38,7 @@ if __name__ == "__main__":
         print("Try again !!")
         exit(0)
 
-        
+
     # reading the csv data
     data = pd.read_csv(io.BytesIO(csv_content), skiprows=1)
 
@@ -50,10 +50,10 @@ if __name__ == "__main__":
     country_list = list(set(data["CountryLong"]))
 
     select_country = Bullet(
-        prompt = "\nPlease choose a country: ",
-        choices = country_list, 
+        prompt = "\nPlease choose the country: ",
+        choices = country_list,
         indent = 0,
-        align = 5, 
+        align = 5,
         margin = 2,
         shift = 0,
         bullet = "",
