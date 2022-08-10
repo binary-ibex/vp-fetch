@@ -15,7 +15,7 @@ python3 vp-fetch.py
 
 ```
 
-select the country from the list and press enter.
+Select the country from the list and press enter.
 
 ![Select the country](images/image_1.png)
 
